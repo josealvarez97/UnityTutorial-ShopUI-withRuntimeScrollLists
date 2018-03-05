@@ -10,7 +10,7 @@ public class SimpleObjectPool : MonoBehaviour
     private Stack<GameObject> inactiveInstances = new Stack<GameObject>();
 
     // Returns an instance of the prefab when needed
-    public GameObject GetObject()
+    public GameObject GetObject(Transform contentPanelParent)
     {
         GameObject spawnedGameObject;
 
@@ -32,7 +32,7 @@ public class SimpleObjectPool : MonoBehaviour
         }
 
         // put the instance in the root of the scene and enable it
-        spawnedGameObject.transform.SetParent(null); // so Parent null follows using default at origin...
+        spawnedGameObject.transform.SetParent(contentPanelParent); // so Parent null follows using default at origin...
         spawnedGameObject.SetActive(true);
 
         // return a reference to the instance

@@ -38,9 +38,15 @@ public class ShopScrollList : MonoBehaviour {
         for (int i = 0; i < itemList.Count; i++)
         {
             Item item = itemList[i];
-            GameObject newButton = buttonObjectPool.GetObject();
+            GameObject newButton = buttonObjectPool.GetObject(contentPanel);
             newButton.transform.SetParent(contentPanel); // will be automatically arranged correctly given the arrangements we set up in UI
 
+            // RELEVANT
+            // WORKAROUND FOR FUCKING BUG THAT MESSES UP EVERYTHING
+            // https://answers.unity.com/questions/1257149/scaling-dynamic-created-buttons.html
+            newButton.transform.localScale = new Vector3(1f, 1f, 1f);
+            
+            
             // "Tell the button to set itself up..."
             // "So we are going to get a reference to that sample button script that we attache to our
             // sample button prefab"
