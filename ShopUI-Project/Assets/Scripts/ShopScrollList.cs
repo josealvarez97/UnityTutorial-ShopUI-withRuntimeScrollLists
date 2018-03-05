@@ -24,9 +24,13 @@ public class ShopScrollList : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        RefreshDisplay();
 	}
 	
+    public void RefreshDisplay()
+    {
+        AddButtons();
+    }
     // adds buttons for each item stored in our item list.
     // calls setup function of sample button
     private void AddButtons()
@@ -35,6 +39,16 @@ public class ShopScrollList : MonoBehaviour {
         {
             Item item = itemList[i];
             GameObject newButton = buttonObjectPool.GetObject();
+            newButton.transform.SetParent(contentPanel); // will be automatically arranged correctly given the arrangements we set up in UI
+
+            // "Tell the button to set itself up..."
+            // "So we are going to get a reference to that sample button script that we attache to our
+            // sample button prefab"
+            // YEAH... currently newButton stands for a gameobject...
+            // SampleButton is about our kind of button for the game...
+            // which is all part of the same thing but different components...
+            SampleButton sampleButton = newButton.GetComponent<SampleButton>(); // reference to script...
+            sampleButton.Setup(item, this);
         }
     }
 }
