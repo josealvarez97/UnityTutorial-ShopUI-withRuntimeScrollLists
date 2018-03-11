@@ -29,11 +29,14 @@ public class ShopScrollList : MonoBehaviour {
 	
     public void RefreshDisplay()
     {
+        transform.localScale = new Vector3(1f, 1f, 1f);
         myGoldDisplay.text = "Gold: " + gold.ToString();
         // We remove all 
         RemoveButtons();
         // Because then we just add the ones we actually need.
         AddButtons();
+        
+
     }
     // adds buttons for each item stored in our item list.
     // calls setup function of sample button
@@ -100,7 +103,7 @@ public class ShopScrollList : MonoBehaviour {
     {
 
         // Don't really got why .Remove() is not enough.
-        for (int i = shopList.itemList.Count; i <= 0; i--)
+        for (int i = shopList.itemList.Count - 1; i >= 0; i--)
         {
             if (shopList.itemList[i] == itemToRemove)
             {

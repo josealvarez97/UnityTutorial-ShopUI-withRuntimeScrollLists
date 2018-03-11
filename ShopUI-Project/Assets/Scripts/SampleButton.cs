@@ -15,7 +15,7 @@ public class SampleButton : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        button.onClick.AddListener(HandleClick);
 	}
 	
     public void Setup(Item currentItem, ShopScrollList currentScrollList)
@@ -26,5 +26,10 @@ public class SampleButton : MonoBehaviour {
         iconImage.sprite = item.icon;
 
         scrollList = currentScrollList; // so that our button knows to what list it currently belongs to. For interactivity
+    }
+
+    public void HandleClick()
+    {
+        scrollList.TryTransferItemToOtherShop(item);
     }
 }
