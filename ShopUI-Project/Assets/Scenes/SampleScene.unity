@@ -169,16 +169,16 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
+    m_FontSize: 50
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 2
-    m_MaxSize: 40
+    m_MaxSize: 50
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
     m_LineSpacing: 1
   m_Text: 'Gold: X'
 --- !u!222 &41885431
@@ -254,9 +254,9 @@ RectTransform:
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 0}
+  m_SizeDelta: {x: 20, y: -17}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &103199974
 MonoBehaviour:
@@ -297,7 +297,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 500833944}
   m_Direction: 2
   m_Value: 0
-  m_Size: 1
+  m_Size: 0.99999994
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -423,7 +423,7 @@ MonoBehaviour:
   m_Content: {fileID: 322321307}
   m_Horizontal: 1
   m_Vertical: 1
-  m_MovementType: 1
+  m_MovementType: 2
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -431,8 +431,8 @@ MonoBehaviour:
   m_Viewport: {fileID: 1828206454}
   m_HorizontalScrollbar: {fileID: 1847368857}
   m_VerticalScrollbar: {fileID: 103199974}
-  m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 2
+  m_HorizontalScrollbarVisibility: 1
+  m_VerticalScrollbarVisibility: 1
   m_HorizontalScrollbarSpacing: -3
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
@@ -509,7 +509,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 55.094296, y: -0.000011557419}
+  m_AnchoredPosition: {x: 0.000030517578, y: 0.000061035156}
   m_SizeDelta: {x: -153.38, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &322321308
@@ -537,6 +537,39 @@ MonoBehaviour:
   - itemName: Pelota
     icon: {fileID: 21300000, guid: 7931262bee02b4179ab843cecd12cb07, type: 3}
     price: 3
+  - itemName: Bowling Ball
+    icon: {fileID: 21300000, guid: 5816beacfd8204e4fa223255ce2ac467, type: 3}
+    price: 8
+  - itemName: Catapult
+    icon: {fileID: 21300000, guid: 84c7c25bd260747be85456fa9c48c4b0, type: 3}
+    price: 5
+  - itemName: Hat
+    icon: {fileID: 21300000, guid: 5853b6ddaa2b364478a6de1223809f57, type: 3}
+    price: 2
+  - itemName: Asteroid
+    icon: {fileID: 21300000, guid: bc15c6ea9b0124465b164fd3e89c578d, type: 3}
+    price: 55
+  - itemName: Spaceship
+    icon: {fileID: 21300000, guid: 07fa4a9616a73f34785703310e3f094b, type: 3}
+    price: 3
+  - itemName: Truck Wheel
+    icon: {fileID: 21300000, guid: a0aa6196d79b5db419e9a18c8927b98a, type: 3}
+    price: 30
+  - itemName: Bird
+    icon: {fileID: 21300000, guid: a9c136f9dcfd3954fa0f3fab6260607f, type: 3}
+    price: 11.55
+  - itemName: Wood
+    icon: {fileID: 21300000, guid: 418ab5c27d3054eb89959d9c715e00c9, type: 3}
+    price: 39.99
+  - itemName: Spaceship Red
+    icon: {fileID: 21300024, guid: 07fa4a9616a73f34785703310e3f094b, type: 3}
+    price: 75
+  - itemName: Weight
+    icon: {fileID: 21300000, guid: 1304343364e1ade40a93931a5dacc822, type: 3}
+    price: 25
+  - itemName: Chain Links
+    icon: {fileID: 21300000, guid: 31f33be422f9c8449bbf999c98f5f4d2, type: 3}
+    price: 22.05
   contentPanel: {fileID: 322321307}
   otherShop: {fileID: 0}
   myGoldDisplay: {fileID: 41885430}
@@ -1116,9 +1149,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -17}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1828206455
 MonoBehaviour:
@@ -1198,9 +1231,9 @@ RectTransform:
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 20}
+  m_SizeDelta: {x: -17, y: 20}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1847368857
 MonoBehaviour:
@@ -1240,8 +1273,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1105073981}
   m_HandleRect: {fileID: 1105073980}
   m_Direction: 0
-  m_Value: 0
-  m_Size: 0.4092199
+  m_Value: 0.0000030400033
+  m_Size: 0.97718686
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

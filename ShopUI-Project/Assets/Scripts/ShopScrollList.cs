@@ -29,6 +29,10 @@ public class ShopScrollList : MonoBehaviour {
 	
     public void RefreshDisplay()
     {
+        myGoldDisplay.text = "Gold: " + gold.ToString();
+        // We remove all 
+        RemoveButtons();
+        // Because then we just add the ones we actually need.
         AddButtons();
     }
     // adds buttons for each item stored in our item list.
@@ -38,7 +42,7 @@ public class ShopScrollList : MonoBehaviour {
         for (int i = 0; i < itemList.Count; i++)
         {
             Item item = itemList[i];
-            GameObject newButton = buttonObjectPool.GetObject(contentPanel);
+            GameObject newButton = buttonObjectPool.GetObject(/*contentPanel*/);
             newButton.transform.SetParent(contentPanel); // will be automatically arranged correctly given the arrangements we set up in UI
 
             // RELEVANT
@@ -57,4 +61,52 @@ public class ShopScrollList : MonoBehaviour {
             sampleButton.Setup(item, this);
         }
     }
+
+    private void RemoveButtons()
+    {
+        while(contentPanel.childCount > 0)
+        {
+            GameObject toRemove = transform.GetChild(0).gameObject;
+            buttonObjectPool.ReturnObject(toRemove);
+        }
+
+    }
+
+    public void TryTransferItemToOtherShop(Item item)
+    {
+        if (otherShop.gold >= item.price)
+        {
+            gold += item.price;
+            otherShop.gold -= item.price;
+
+
+            AddItem(item, otherShop);
+            RemoveItem(item, this);
+
+            RefreshDisplay();
+            otherShop.RefreshDisplay();
+
+
+        }
+;
+    }
+    private void AddItem(Item itemToAdd, ShopScrollList shopList)
+    {
+        shopList.itemList.Add(itemToAdd);
+        
+    }
+
+    private void RemoveItem(Item itemToRemove, ShopScrollList shopList)
+    {
+
+        // Don't really got why .Remove() is not enough.
+        for (int i = shopList.itemList.Count; i <= 0; i--)
+        {
+            if (shopList.itemList[i] == itemToRemove)
+            {
+                shopList.itemList.RemoveAt(i);
+            }
+        }
+    }
+
 }
